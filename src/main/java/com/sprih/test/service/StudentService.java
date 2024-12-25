@@ -46,4 +46,12 @@ public class StudentService {
         return studentRepository.save(student);
     }
 
+    public List<Student> filterSecondaryStudentsByBoard(String educationBoard) {
+        return studentRepository.findByGradeLevelAndEducationBoard("Secondary", educationBoard);
+    }
+
+
+    public List<Student> filterByFeeStatusOrParentQualification(String feeStatus, String minParentQualification) {
+        return studentRepository.findByFeeStatusOrParentQualificationGreaterThan(feeStatus, minParentQualification);
+    }
 }

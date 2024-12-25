@@ -1,6 +1,5 @@
 package com.sprih.test.entity;
 
-
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -28,7 +27,10 @@ public class Student {
     @ElementCollection
     private List<String> languages;
 
-
+    private String educationBoard;
+    private String gradeLevel;
+    private String feeStatus;
+    private String parentQualification;
 
 
     public Long getId() {
@@ -143,5 +145,35 @@ public class Student {
         this.languages = languages;
     }
 
+    public String getEducationBoard() {
+        return educationBoard;
+    }
 
+    public void setEducationBoard(String educationBoard) {
+        this.educationBoard = educationBoard;
+    }
+
+    public String getGradeLevel() {
+        return gradeLevel;
+    }
+
+    public void setGradeLevel(String gradeLevel) {
+        this.gradeLevel = gradeLevel;
+    }
+
+    public String getFeeStatus() {
+        return feeStatus;
+    }
+
+    public void setFeeStatus(String feeStatus) {
+        this.feeStatus = feeStatus;
+    }
+
+    public String getParentQualification() {
+        return parentQualification;
+    }
+
+    public void setParentQualification(String parentQualification) {
+        this.parentQualification = parentQualification;
+    }
 }

@@ -58,4 +58,17 @@ public class StudentController {
         Student savedStudent = studentService.saveStudent(student);
         return new ResponseEntity<>(savedStudent, HttpStatus.CREATED);
     }
+
+    @GetMapping("/students/secondary/icse")
+    public List<Student> getSecondaryStudentsByICSEBoard() {
+        return studentService.filterSecondaryStudentsByBoard("ICSE");
+    }
+
+    @GetMapping("/students/filter")
+    public List<Student> getStudentsByFeeStatusOrParentQualification(
+            @RequestParam String feeStatus,
+            @RequestParam String minParentQualification
+    ) {
+        return studentService.filterByFeeStatusOrParentQualification(feeStatus, minParentQualification);
+    }
 }
